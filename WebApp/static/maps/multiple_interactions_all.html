@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@3.3.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@4"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"view": {"width": 400, "height": 300}, "mark": {"tooltip": null}}, "vconcat": [{"hconcat": [{"mark": "circle", "encoding": {"color": {"value": "lightgray", "condition": {"type": "quantitative", "field": "grav", "legend": null, "scale": {"scheme": "redyellowgreen"}, "selection": "Vehicle Left "}}, "tooltip": [{"type": "quantitative", "field": "hrmn", "title": "Heure"}, {"type": "nominal", "field": "catv_str", "title": "Veh. Cat."}, {"type": "quantitative", "field": "grav", "title": "Gravity"}, {"type": "nominal", "field": "sexe_str", "title": "Casualty genre"}], "x": {"type": "quantitative", "field": "long"}, "y": {"type": "quantitative", "field": "lat"}}, "height": 500, "selection": {"Vehicle Left ": {"type": "single", "fields": ["catv_str"], "bind": {"input": "select", "options": ["Voiture", "Moto", "Velo", "Camion"]}}}, "width": 500}, {"mark": "circle", "encoding": {"color": {"value": "lightgray", "condition": {"type": "quantitative", "field": "grav", "legend": null, "scale": {"scheme": "redyellowgreen"}, "selection": "Vehicle Right "}}, "tooltip": [{"type": "quantitative", "field": "hrmn", "title": "Heure"}, {"type": "nominal", "field": "catv_str", "title": "Veh. Cat."}, {"type": "quantitative", "field": "grav", "title": "Gravity"}, {"type": "nominal", "field": "sexe_str", "title": "Casualty genre"}], "x": {"type": "quantitative", "field": "long"}, "y": {"type": "quantitative", "field": "lat"}}, "height": 500, "selection": {"Vehicle Right ": {"type": "single", "fields": ["catv_str"], "bind": {"input": "select", "options": ["Voiture", "Moto", "Velo", "Camion"]}}}, "width": 500}, {"mark": "point", "encoding": {"color": {"value": "lightgray", "condition": {"type": "quantitative", "field": "grav", "legend": null, "scale": {"scheme": "redyellowgreen"}, "selection": "selector009"}}, "y": {"type": "quantitative", "axis": {"orient": "right"}, "field": "grav"}}, "selection": {"selector009": {"type": "multi", "fields": ["grav"]}}}]}, {"hconcat": [{"mark": {"type": "bar", "size": 10}, "encoding": {"color": {"type": "nominal", "field": "sexe_str"}, "tooltip": [{"type": "nominal", "field": "sexe_str", "title": "Casualty genre :"}, {"type": "quantitative", "aggregate": "count", "title": "Count :"}], "x": {"type": "quantitative", "field": "an"}, "y": {"type": "quantitative", "aggregate": "count"}}, "height": 100, "transform": [{"filter": {"selection": "Vehicle Left "}}], "width": 500}, {"mark": {"type": "bar", "size": 10}, "encoding": {"color": {"type": "nominal", "field": "sexe_str"}, "tooltip": [{"type": "nominal", "field": "sexe_str", "title": "Casualty genre :"}, {"type": "quantitative", "aggregate": "count", "title": "Count :"}], "x": {"type": "quantitative", "field": "an"}, "y": {"type": "quantitative", "aggregate": "count"}}, "height": 100, "transform": [{"filter": {"selection": "Vehicle Right "}}], "width": 500}]}], "data": {"url": "altair-data-c15ba7ff7fc7cafec83a4edadc210d47.json", "format": {"type": "json"}}, "$schema": "https://vega.github.io/schema/vega-lite/v3.3.0.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

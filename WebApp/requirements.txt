@@ -1,0 +1,6 @@
+Flask
+Gunicorn
+Werkzeug
+numpy
+pandas
+altair

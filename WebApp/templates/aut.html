@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/CSS/style.css">
+    <title>Highway view</title>
+
+  </head>
+  <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+    <a href="/" style="text-decoration:none">
+      <img src = "static/images/hig.png" width="100%" style="border: 0;">
+    </a>
+    <br>
+
+    <style>
+
+      .condition {
+        background-color: white;
+        color: black;
+        width: 100px;
+        height: 30px;
+        border: 2px solid #4CAF50;
+        border-radius: 12px;
+        padding: 4px 10px;
+        font-size: 8px;
+        cursor: pointer;
+        text-align: center;
+        transition-duration: 0.4s;
+      }
+      .condition:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
+      .condition:active{
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
+      .condition:focus{
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
+      .link {
+        fill: none;
+        stroke: #000;
+      }
+      .link:hover {
+        stroke-opacity: .5;
+      }
+      /* Creates a box for the tooltip */
+      .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+      }
+      /* Creates a small triangle extender for the tooltip */
+      .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+      }
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+    </style>
+
+
+<div style="margin-left:140px;margin-right:140px;margin-top:10px;">
+
+<div class="row">
+
+    <div class="column_home" id="left-col" align="center">
+         <form action="/" method="get" align="center">
+         <input type="submit" name="all" value="The Data" align="center">
+       </form>
+    </div>
+
+    <!-- All roads -->
+    <div class="column_home" id="left-col" align="center">
+         <form action="/all" method="get" align="center">
+         <input type="submit" name="all" value="All Roads" align="center">
+       </form>
+     </div>
+
+    <!-- Commune -->
+     <div class="column_home" id="left-col" align="center">
+         <form action="/com" method="post" align="center">
+         <input type="submit" name="com" value="Communal" align="center">
+       </form>
+     </div>
+
+     <!-- Department -->
+     <div class="column_home" id="left-col" align="center">
+         <form action="/dep" method="post" align="center">
+         <input type="submit" name="dep" value="Departmental" align="center">
+       </form>
+     </div>
+
+    <!-- National -->
+    <div class="column_home" id="left-col" align="center">
+        <form action="/nat" method="post" align="center">
+          <input type="submit" name="nat" value="National" align="center">
+        </form>
+    </div>
+
+    <!-- Highway -->
+    <div class="column_home" id="left-col" align="center">
+        <form action="/aut" method="post" align="center">
+          <input type="submit" name="aut" value="Highway" align="center">
+        </form>
+    </div>
+
+</div>
+
+<br>
+
+<!-- SENSITIZE -->
+
+<div align="left">
+<img src = "static/images/1.png" width="20%" style="border: 0;"/>
+</div>
+
+<br>
+
+<p>Local police and communes are working together on sensitization of the youngster on the road dangers. One might believe that dangers for these kids arise once they have their first motorcycle or car. However, if they are involved in an accident, death rates among bike riders and pedestrians are incredibly high compared to other transportation means.</p>
+
+<br>
+
+<p>In this visualization, we created a Sankey diagram (flow chart) that shows the proportion of pedestrians, bike riders, motorcycles and cars involved in a crash these last 13 years, distinguishes if they were wearing all security equipments, and finally shows the survival rate among each category.  This graph clearly illustrates the fragility and the exposure of pedestrians and bike riders, and contributes to sensitization of these populations.</p>
+
+<br>
+
+<p><i>Possible interactions :</i></p>
+
+<br>
+
+<div>
+
+  <div class="row">
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/change.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Switch between tabs to switch data sources.</p>
+    </div>
+
+     <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/move.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Move the position of the middle layers.</p>
+     </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+        <img src = "static/images/hover.png" width="40%" style="border: 0;"/>
+        <p class="tooltiptext">Details are displayed on hover.</p>
+    </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/select.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Use the buttons under the graph to select filters.</p>
+     </div>
+
+</div>
+
+<br>
+</div>
+</div>
+
+<div style="margin-left:40px;margin-right:40px;margin-top:10px;" align="center">
+  <div class="row">
+    <div id='sankey_aut'></div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+
+    <i>Conditions d'éclairages:</i>
+      <button class="condition" onclick="update('Autoroute_jour')">Jour</button>
+      <button class="condition" onclick="update('Autoroute_crep')">Crépuscule</button>
+      <button class="condition" onclick="update('Autoroute_nuit_sans_ecl')">Nuit sans éclairage</button>
+      <button class="condition" onclick="update('Autoroute_nuit_avec_ecl')">Nuit avec éclairage</button>
+      <button class="condition" onclick="update('Autoroute')">Sans conditions</button>
+    </div>
+
+<br>
+<br>
+
+<script type="text/javascript">
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 150, bottom: 10, left: 10},
+    width = 1450 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#sankey_aut").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//  tooltip
+var tip = d3.tip()
+ .attr('class', 'd3-tip')
+ .offset([-1, 1])
+ .html(function(d) {
+   return d.legend;
+ })
+
+// Add tooltip to svg
+svg.call(tip);
+
+// Append a defs (for definition) element to your SVG
+const defs = svg.append('defs');
+
+// Set the sankey diagram properties
+var sankey = d3.sankey()
+    .nodeWidth(15)
+    .nodePadding(110)
+    .size([width, height]);
+
+// load the data
+d3.json("static/js/Autoroute.json", function(error, graph) {
+
+  // Constructs a new Sankey generator with the default settings.
+  sankey
+  .nodes(graph.nodes)
+  .links(graph.links)
+  .layout(1);
+
+  // add in the links
+  var link = svg.append("g")
+    .selectAll(".link")
+    .data(graph.links)
+    .enter()
+    .append("path")
+      .attr("class", "link")
+      .attr("d", sankey.link() )
+      .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+      .style("opacity", function(d) {return d.alpha;})
+      .sort(function(a, b) { return b.dy - a.dy; })
+      .on("mouseover", tip.show)
+      .on("mouseout", tip.hide);
+
+  // add in the nodes
+  var node = svg.append("g")
+    .selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .call(d3.drag()
+        .subject(function(d) { return d; })
+        .on("start", function() { this.parentNode.appendChild(this); })
+        .on("drag", dragmove));
+
+  // add the rectangles for the nodes
+  node
+    .append("rect")
+      .attr("height", function(d) { return d.dy; })
+      .attr("width", sankey.nodeWidth())
+      .style("fill", function(d){ return d.color; })
+      .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
+      .on("mouseover", tip.show)
+      .on("mouseout",  tip.hide);
+
+
+  // add in the title for the nodes
+  node
+    .append("text")
+      .attr("x", -6)
+      .attr("y", function(d) { return d.dy / 2; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", "end")
+      .attr("transform", null)
+      .text(function(d) { return d.name; })
+    //.filter(function(d) { return d.x < width / 2; })
+      .attr("x", 6 + sankey.nodeWidth())
+      .attr("text-anchor", "start");
+
+  // add gradient to links
+  link.style('stroke', (d, i) => {
+
+    // make unique gradient ids
+    var gradientID = `gradient${i}`;
+    var startColor = d.source.color;
+    var stopColor = d.target.color;
+    var linearGradient = defs.append('linearGradient')
+        .attr('id', gradientID);
+    linearGradient.selectAll('stop')
+      .data([
+          {offset: '30%', color: startColor },
+          {offset: '70%', color: stopColor }
+        ])
+      .enter().append('stop')
+      .attr('offset', d => {
+        return d.offset;
+      })
+      .attr('stop-color', d => {
+        return d.color;
+      });
+    return `url(#${gradientID})`;
+  });
+  // the function for moving the nodes
+  function dragmove(d) {
+    d3.select(this)
+      .attr("transform",
+            "translate("
+               + (d.x = Math.max(
+                  0, Math.min(width - d.dx, d3.event.x))
+                 ) + ","
+               + (d.y = Math.max(
+                  0, Math.min(height - d.dy, d3.event.y))
+                 ) + ")");
+    sankey.relayout();
+    link.attr("d", sankey.link());
+  }
+});
+
+
+// Update data on button
+function update (selectedVar){
+  // load the data
+  d3.json("static/js/" + selectedVar + ".json", function(error, graph) {
+    // Constructs a new Sankey generator with the default settings.
+    sankey.nodes(graph.nodes).links(graph.links).layout(1);
+    console.log(graph.links)
+    // Relayout the Sankey
+    sankey.relayout();
+    // add in the links
+    svg.selectAll(".link")
+      .data(graph.links)
+      .sort(function(a, b) { return b.dy - a.dy; })
+      .transition()
+      .attr("d", sankey.link())
+      .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+      .style("opacity", function(d) {return d.alpha;})
+    // add in the nodes
+    svg.selectAll(".node")
+      .data(graph.nodes)
+      .transition()
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    // add the rectangles for the nodes
+    svg.selectAll(".node rect")
+      .data(graph.nodes)
+      .attr("height", function(d) { return d.dy; })
+      .attr("width", sankey.nodeWidth())
+      .style("fill", function(d){ return d.color; })
+      .style("stroke", function(d) { return d3.rgb(d.color).darker(2); });
+    // add in the title for the nodes
+    svg.selectAll(".node text")
+        .transition()
+        .attr("x", -6)
+        .attr("y", function(d) { console.log(d.dy);return d.dy / 2; })
+        .attr("dy", ".35em")
+        .attr("text-anchor", "end")
+        .attr("transform", null)
+        .text(function(d) { return d.name; })
+        .attr("x", 6 + sankey.nodeWidth())
+        .attr("text-anchor", "start");
+    // add gradient to links
+    defs.selectAll('linearGradient').remove();
+    svg.selectAll(".link").style('stroke', (d, i) => {
+      // make unique gradient ids
+      var gradientID = `gradient${i}`;
+      var startColor = d.source.color;
+      var stopColor = d.target.color;
+      console.log(d.source.name + d.source.color)
+      console.log(d.target.name + d.target.color)
+      console.log(gradientID)
+      var linearGradient = defs.append('linearGradient')
+          .attr('id', gradientID);
+      linearGradient.selectAll('stop')
+        .data([
+            {offset: '30%', color: startColor },
+            {offset: '70%', color: stopColor }
+          ])
+        .enter().append('stop')
+        .attr('offset', d => {
+          return d.offset;
+        })
+        .attr('stop-color', d => {
+          return d.color;
+        });
+      return `url(#${gradientID})`;
+    });
+    // the function for moving the nodes
+    function dragmove(d) {
+      d3.select(this)
+        .attr("transform",
+              "translate("
+                 + (d.x = Math.max(
+                    0, Math.min(width - d.dx, d3.event.x))
+                   ) + ","
+                 + (d.y = Math.max(
+                    0, Math.min(height - d.dy, d3.event.y))
+                   ) + ")");
+      sankey.relayout();
+      link.attr("d", sankey.link());
+    }
+  });
+};
+
+
+</script>
+
+<br>
+</div>
+
+<!-- PREVENT -->
+
+<div style="margin-left:140px;margin-right:140px;margin-top:10px;">
+
+<div align="left">
+<img src = "static/images/2.png" width="20%" style="border: 0;"/>
+</div>
+
+<br>
+
+<p> Can communes, departments, or even the state prevent crashes before they occur? To answer this vast question, we created a graph whose role is to cluster the types of roads (width, surface, infrastructure, proximity of a school…), and their related accident rate, thanks to a T-SNE embedding. We reduce dimension to allow the user to visualize high dimensional problems in a simple dashboard. Thanks to this visualization, we expect road authorities to be able to adjust the characteristics of a road when building or renovating a road.</p>
+
+<br>
+
+<p>The user can select the type of road from the different pages(communal, departmental, national), and in each case, observe the clusters created by T-SNEs. The green clusters represent a low accident rate, and the red ones a high one. The user can hover on a given point to observe all the characteristics of a given road, and select a region in the T-SNE plot. When selecting a region, the histograms all around the plot are updated. This allows users to understand the local distributions of variables on which they can have an impact when building a new road.
+</p>
+
+<br>
+
+<p><i>Possible interactions :</i></p>
+
+<br>
+
+<div>
+
+  <div class="row">
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/change.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Switch between tabs to switch data sources.</p>
+    </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/export.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Export the graph as a PNG file.</p>
+     </div>
+
+     <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/move.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Move in the graph by selecting regions on the TSNE.</p>
+     </div>
+
+     <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/select.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Select specific gravity types using the legend.</p>
+     </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+        <img src = "static/images/hover.png" width="40%" style="border: 0;"/>
+        <p class="tooltiptext">Details are displayed on hover.</p>
+    </div>
+
+</div>
+
+
+<br>
+</div>
+</div>
+
+<div style="margin-left:40px;margin-right:40px;margin-top:10px;" align="center">
+<iframe src="static/graphs/tsne_aut.html" width="1300px" height="850px" frameBorder="0"></iframe>
+
+<br>
+</div>
+
+<!-- MONITOR -->
+
+<div style="margin-left:140px;margin-right:140px;margin-top:10px;">
+<div align="left">
+<img src = "static/images/3.png" width="20%" style="border: 0;"/>
+</div>
+
+<br>
+
+<p> The last task of road services is to monitor the roads, and the accident rates
+  on each road. Additional security measures might be needed in certain cases, or
+  certain conditions. Local authorities might have an idea of what kind of road is dangerous,
+  but our visualization brings a clear overall view, and allows the user to understand a high dimensional spatial problem and the distributions of several factors that act on the gravity of an accident.</p><br>
+
+<p>We expect the user to select regions on the map of France, and see all the histograms being updated live. This can be useful to understand the distributions in a given region, and by navigating though the different tabs of the website, focus on the different types of roads.</p>
+
+<br>
+
+<p><i>Possible interactions :</i></p>
+
+<br>
+
+<div>
+
+  <div class="row">
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/change.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Switch between tabs to switch data sources.</p>
+    </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/export.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Export the graph as a PNG file.</p>
+     </div>
+
+     <div class="column_home tooltip" id="left-col" align="center">
+         <img src = "static/images/move.png" width="40%" style="border: 0;"/>
+         <p class="tooltiptext">Move in the graph by selecting regions on the map.</p>
+     </div>
+
+    <div class="column_home tooltip" id="left-col" align="center">
+        <img src = "static/images/hover.png" width="40%" style="border: 0;"/>
+        <p class="tooltiptext">Details are displayed on hover.</p>
+    </div>
+
+</div>
+
+<br>
+</div>
+</div>
+
+<div style="margin-left:40px;margin-right:40px;margin-top:10px;">
+    <iframe src="static/graphs/map_aut.html" width="1100px" height="850px" frameBorder="0">
+    </iframe>
+</div>
+
+<br><br><br>
+  </body>
+</html>

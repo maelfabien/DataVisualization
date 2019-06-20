@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_7d3eaf30ca384129a50fceca6a9630ec {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-dvf/0.3.0/leaflet-dvf.markers.min.js"></script>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_7d3eaf30ca384129a50fceca6a9630ec" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_7d3eaf30ca384129a50fceca6a9630ec = L.map(
+        'map_7d3eaf30ca384129a50fceca6a9630ec', {
+        center: [48.840040811, 2.29268840406],
+        zoom: 13,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_5f8b69caf93d4675a1af3a1402b83121 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+    
+            var regular_polygon_marker_5a6a27f1a6d24821bb882b7ad0f879cf = new L.RegularPolygonMarker(
+                new L.LatLng(48.8335,2.29866),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_d6820ca47adf46b2a62ff2763b9a6b53 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_5d0957dc84bf4fb5ae83860fc731ed42 = $(`<div id="html_5d0957dc84bf4fb5ae83860fc731ed42" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_d6820ca47adf46b2a62ff2763b9a6b53.setContent(html_5d0957dc84bf4fb5ae83860fc731ed42);
+            
+
+            regular_polygon_marker_5a6a27f1a6d24821bb882b7ad0f879cf.bindPopup(popup_d6820ca47adf46b2a62ff2763b9a6b53)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_594b635225f64ad3ae7375919d268768 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8335,2.29866),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_f08069e225e044d88b14ecb746f6e965 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_6f27950118b64cfcad1af62cbf4470db = $(`<div id="html_6f27950118b64cfcad1af62cbf4470db" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_f08069e225e044d88b14ecb746f6e965.setContent(html_6f27950118b64cfcad1af62cbf4470db);
+            
+
+            regular_polygon_marker_594b635225f64ad3ae7375919d268768.bindPopup(popup_f08069e225e044d88b14ecb746f6e965)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_8246c2bce9dd438d826edd7920e648e4 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8494,2.28155),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_b58b6f2acdc449e5a26a6dd389e026d1 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_2984ec6aeddf4c83ac2f787b71ac129a = $(`<div id="html_2984ec6aeddf4c83ac2f787b71ac129a" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_b58b6f2acdc449e5a26a6dd389e026d1.setContent(html_2984ec6aeddf4c83ac2f787b71ac129a);
+            
+
+            regular_polygon_marker_8246c2bce9dd438d826edd7920e648e4.bindPopup(popup_b58b6f2acdc449e5a26a6dd389e026d1)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_e429284b06404967a92aacb53e30f7a2 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8408,2.31637),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_a6653bf2930744bbac33c63054aff7db = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f7e26cf475a444edb1926841ba6413e8 = $(`<div id="html_f7e26cf475a444edb1926841ba6413e8" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_a6653bf2930744bbac33c63054aff7db.setContent(html_f7e26cf475a444edb1926841ba6413e8);
+            
+
+            regular_polygon_marker_e429284b06404967a92aacb53e30f7a2.bindPopup(popup_a6653bf2930744bbac33c63054aff7db)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_0f62c282bc6246a499c68d78be56cc30 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8289,2.29408),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_cbb61e6468dd49729aac1c429b936c78 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b7b498e63ef74924a7ba48029f40ad1e = $(`<div id="html_b7b498e63ef74924a7ba48029f40ad1e" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_cbb61e6468dd49729aac1c429b936c78.setContent(html_b7b498e63ef74924a7ba48029f40ad1e);
+            
+
+            regular_polygon_marker_0f62c282bc6246a499c68d78be56cc30.bindPopup(popup_cbb61e6468dd49729aac1c429b936c78)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_44b5dd57949f4cc488a5d85909d94c93 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8411,2.27786),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_7cc9d9248f1848d78dcd6dfbaedcf74a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1cc2ec6af4c549849c3dd830376a34fb = $(`<div id="html_1cc2ec6af4c549849c3dd830376a34fb" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_7cc9d9248f1848d78dcd6dfbaedcf74a.setContent(html_1cc2ec6af4c549849c3dd830376a34fb);
+            
+
+            regular_polygon_marker_44b5dd57949f4cc488a5d85909d94c93.bindPopup(popup_7cc9d9248f1848d78dcd6dfbaedcf74a)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_bdb7a8c6d06f4f59a3f1a9724311ba8f = new L.RegularPolygonMarker(
+                new L.LatLng(48.8461,2.27692),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_8680289fdbba424ba23dcd4e3497b74a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f8db8cbe96414b7d8e9fb142cc90f6be = $(`<div id="html_f8db8cbe96414b7d8e9fb142cc90f6be" style="width: 100.0%; height: 100.0%;">Vehicle code : 34<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_8680289fdbba424ba23dcd4e3497b74a.setContent(html_f8db8cbe96414b7d8e9fb142cc90f6be);
+            
+
+            regular_polygon_marker_bdb7a8c6d06f4f59a3f1a9724311ba8f.bindPopup(popup_8680289fdbba424ba23dcd4e3497b74a)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_0afbf0a54805434ba9a4669f82129c2a = new L.RegularPolygonMarker(
+                new L.LatLng(48.8411,2.28788),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_d55da620bd404973a3cc3443559aee51 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_16898858abe74e4ab8f4c9e92fcc87d9 = $(`<div id="html_16898858abe74e4ab8f4c9e92fcc87d9" style="width: 100.0%; height: 100.0%;">Vehicle code : 34<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_d55da620bd404973a3cc3443559aee51.setContent(html_16898858abe74e4ab8f4c9e92fcc87d9);
+            
+
+            regular_polygon_marker_0afbf0a54805434ba9a4669f82129c2a.bindPopup(popup_d55da620bd404973a3cc3443559aee51)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_023bbdb1e5594c0f87e08dfbd5f69753 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8404,2.27146),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_337169c16c034dcf843739ddf0b86f92 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_497da2c3571a4dbe8b7cc132a64cf5b8 = $(`<div id="html_497da2c3571a4dbe8b7cc132a64cf5b8" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_337169c16c034dcf843739ddf0b86f92.setContent(html_497da2c3571a4dbe8b7cc132a64cf5b8);
+            
+
+            regular_polygon_marker_023bbdb1e5594c0f87e08dfbd5f69753.bindPopup(popup_337169c16c034dcf843739ddf0b86f92)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_1dbbdfaf986c4f878a36b947bced1d65 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8422,2.28554),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_e01bd90bd7c64170832b37c13da83329 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1b2248c6a7194da281d1c23d3161f9be = $(`<div id="html_1b2248c6a7194da281d1c23d3161f9be" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_e01bd90bd7c64170832b37c13da83329.setContent(html_1b2248c6a7194da281d1c23d3161f9be);
+            
+
+            regular_polygon_marker_1dbbdfaf986c4f878a36b947bced1d65.bindPopup(popup_e01bd90bd7c64170832b37c13da83329)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_8237cedb66094a6e905e5e5a6c17bfb7 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8434,2.28272),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_4d689dcc5ae04dac83dcce1eb0a278a8 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_4986e3a6092947e4b605cd06d5783452 = $(`<div id="html_4986e3a6092947e4b605cd06d5783452" style="width: 100.0%; height: 100.0%;">Vehicle code : 2<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_4d689dcc5ae04dac83dcce1eb0a278a8.setContent(html_4986e3a6092947e4b605cd06d5783452);
+            
+
+            regular_polygon_marker_8237cedb66094a6e905e5e5a6c17bfb7.bindPopup(popup_4d689dcc5ae04dac83dcce1eb0a278a8)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_bbffcae21d0a4c7cba504157562e8e14 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8461,2.31437),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_fc8df67f57994a79af219f94732b8cd5 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_9ed70be292bb460aaf53ba11f8bc41e1 = $(`<div id="html_9ed70be292bb460aaf53ba11f8bc41e1" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_fc8df67f57994a79af219f94732b8cd5.setContent(html_9ed70be292bb460aaf53ba11f8bc41e1);
+            
+
+            regular_polygon_marker_bbffcae21d0a4c7cba504157562e8e14.bindPopup(popup_fc8df67f57994a79af219f94732b8cd5)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_54b2240f13664f6c9b24e9afdb842011 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8432,2.31356),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_f6c06bfd3999449b9dffecb3521817ba = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_164bcd452a074e10bb54eb39e887e962 = $(`<div id="html_164bcd452a074e10bb54eb39e887e962" style="width: 100.0%; height: 100.0%;">Vehicle code : 2<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_f6c06bfd3999449b9dffecb3521817ba.setContent(html_164bcd452a074e10bb54eb39e887e962);
+            
+
+            regular_polygon_marker_54b2240f13664f6c9b24e9afdb842011.bindPopup(popup_f6c06bfd3999449b9dffecb3521817ba)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_aa95d355475e429d9cc03747f48c82e4 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8391,2.29145),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_97c879627e244e4c96a2647e72454082 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b7ae6ca233b9422996a42b5dbca75b54 = $(`<div id="html_b7ae6ca233b9422996a42b5dbca75b54" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_97c879627e244e4c96a2647e72454082.setContent(html_b7ae6ca233b9422996a42b5dbca75b54);
+            
+
+            regular_polygon_marker_aa95d355475e429d9cc03747f48c82e4.bindPopup(popup_97c879627e244e4c96a2647e72454082)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_bfe19561c4d74a6ba6dd1cd0b4a46aac = new L.RegularPolygonMarker(
+                new L.LatLng(48.8347,2.30515),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_db5f34cb9a2e4bef8d8696a9c56a85c2 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_81960dcc40fd4979a05247de5aab3faf = $(`<div id="html_81960dcc40fd4979a05247de5aab3faf" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_db5f34cb9a2e4bef8d8696a9c56a85c2.setContent(html_81960dcc40fd4979a05247de5aab3faf);
+            
+
+            regular_polygon_marker_bfe19561c4d74a6ba6dd1cd0b4a46aac.bindPopup(popup_db5f34cb9a2e4bef8d8696a9c56a85c2)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_1cb438ae9f73431ab5db7bf6b8b0ea77 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8575,2.29103),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_7135e9a5b0404b09a1fe3d8cfe37b80f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_6f881293c3774646b4ae84e9c5ee7061 = $(`<div id="html_6f881293c3774646b4ae84e9c5ee7061" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_7135e9a5b0404b09a1fe3d8cfe37b80f.setContent(html_6f881293c3774646b4ae84e9c5ee7061);
+            
+
+            regular_polygon_marker_1cb438ae9f73431ab5db7bf6b8b0ea77.bindPopup(popup_7135e9a5b0404b09a1fe3d8cfe37b80f)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_fb51ef0dcdf54451b108ea86ab03f881 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8415,2.29914),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_a4e4cdf36aed4f6e82fb5528bd2e1bc1 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_76bc4ba1c5df451e8c872588dfc45038 = $(`<div id="html_76bc4ba1c5df451e8c872588dfc45038" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_a4e4cdf36aed4f6e82fb5528bd2e1bc1.setContent(html_76bc4ba1c5df451e8c872588dfc45038);
+            
+
+            regular_polygon_marker_fb51ef0dcdf54451b108ea86ab03f881.bindPopup(popup_a4e4cdf36aed4f6e82fb5528bd2e1bc1)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_d73da70bce34491197f7e9dde86d36ba = new L.RegularPolygonMarker(
+                new L.LatLng(48.8423,2.27381),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_9de9dfebe0884635906c2e3a5e30bb18 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_ad46e01d6ab94ef29a586506a4c7ad13 = $(`<div id="html_ad46e01d6ab94ef29a586506a4c7ad13" style="width: 100.0%; height: 100.0%;">Vehicle code : 2<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_9de9dfebe0884635906c2e3a5e30bb18.setContent(html_ad46e01d6ab94ef29a586506a4c7ad13);
+            
+
+            regular_polygon_marker_d73da70bce34491197f7e9dde86d36ba.bindPopup(popup_9de9dfebe0884635906c2e3a5e30bb18)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_4f3b04fa7ffe456083e56547572109ca = new L.RegularPolygonMarker(
+                new L.LatLng(48.8437,2.29297),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_4ecf0b527f894e4da0ee7f014694b328 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_48c51ab85768421293332339969ace41 = $(`<div id="html_48c51ab85768421293332339969ace41" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_4ecf0b527f894e4da0ee7f014694b328.setContent(html_48c51ab85768421293332339969ace41);
+            
+
+            regular_polygon_marker_4f3b04fa7ffe456083e56547572109ca.bindPopup(popup_4ecf0b527f894e4da0ee7f014694b328)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_a1ac849a6058428d8fad9c803dd46b64 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8393,2.31621),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_6642194a7e45412cac3d48d7ad33f289 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_94abcd10ece54160bea6d7a4ce9f4acd = $(`<div id="html_94abcd10ece54160bea6d7a4ce9f4acd" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_6642194a7e45412cac3d48d7ad33f289.setContent(html_94abcd10ece54160bea6d7a4ce9f4acd);
+            
+
+            regular_polygon_marker_a1ac849a6058428d8fad9c803dd46b64.bindPopup(popup_6642194a7e45412cac3d48d7ad33f289)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_c1213007385b4d7c8e234c52e346ac83 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8372,2.27726),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_deda44e9f7634cd88a15552b2ac82dde = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_4835340bb4c5477ba0d88d66306eec88 = $(`<div id="html_4835340bb4c5477ba0d88d66306eec88" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_deda44e9f7634cd88a15552b2ac82dde.setContent(html_4835340bb4c5477ba0d88d66306eec88);
+            
+
+            regular_polygon_marker_c1213007385b4d7c8e234c52e346ac83.bindPopup(popup_deda44e9f7634cd88a15552b2ac82dde)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_8f4a3e88b7c640599de73112144cbcf2 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8352,2.26606),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_52ba34ebb6e14bc78fce010de1dba2cf = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_9940eadc21e14537bfe29b7849027bf3 = $(`<div id="html_9940eadc21e14537bfe29b7849027bf3" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_52ba34ebb6e14bc78fce010de1dba2cf.setContent(html_9940eadc21e14537bfe29b7849027bf3);
+            
+
+            regular_polygon_marker_8f4a3e88b7c640599de73112144cbcf2.bindPopup(popup_52ba34ebb6e14bc78fce010de1dba2cf)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_79d6b2e68e03439ebc2307cf6e042783 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8462,2.27952),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_95bfe96a96df4482b804737882eec859 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_54fc7b4d58a84b7c82f1a7b1704b2adc = $(`<div id="html_54fc7b4d58a84b7c82f1a7b1704b2adc" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_95bfe96a96df4482b804737882eec859.setContent(html_54fc7b4d58a84b7c82f1a7b1704b2adc);
+            
+
+            regular_polygon_marker_79d6b2e68e03439ebc2307cf6e042783.bindPopup(popup_95bfe96a96df4482b804737882eec859)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_c3f6c4c1af504c61a0cf4412f9320788 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8498,2.28287),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_813adbd356854f189075dd76311574db = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_271d7939b0714501a4cf7b17e236ee29 = $(`<div id="html_271d7939b0714501a4cf7b17e236ee29" style="width: 100.0%; height: 100.0%;">Vehicle code : 34<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_813adbd356854f189075dd76311574db.setContent(html_271d7939b0714501a4cf7b17e236ee29);
+            
+
+            regular_polygon_marker_c3f6c4c1af504c61a0cf4412f9320788.bindPopup(popup_813adbd356854f189075dd76311574db)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_db839de7fbde46ef8bd9e76c66787c29 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8258,2.29957),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_171f41ed19344588bbdd5f65172e3793 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f12c97c5553645a79a8f136f7fe1993d = $(`<div id="html_f12c97c5553645a79a8f136f7fe1993d" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_171f41ed19344588bbdd5f65172e3793.setContent(html_f12c97c5553645a79a8f136f7fe1993d);
+            
+
+            regular_polygon_marker_db839de7fbde46ef8bd9e76c66787c29.bindPopup(popup_171f41ed19344588bbdd5f65172e3793)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_48921d5be88c45b8b1c222be465b1896 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8258,2.29957),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_5b534e28a3a845b6af5ddf405f72230d = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_932686046fa841d59e17cc1d15318014 = $(`<div id="html_932686046fa841d59e17cc1d15318014" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_5b534e28a3a845b6af5ddf405f72230d.setContent(html_932686046fa841d59e17cc1d15318014);
+            
+
+            regular_polygon_marker_48921d5be88c45b8b1c222be465b1896.bindPopup(popup_5b534e28a3a845b6af5ddf405f72230d)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_92af1e111bcc4d7e9930ec6ff6a0a108 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8351,2.26921),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_941832c280ec4feb83e0f48d171177a2 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_722b921c606442e08a2359ed388116e3 = $(`<div id="html_722b921c606442e08a2359ed388116e3" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_941832c280ec4feb83e0f48d171177a2.setContent(html_722b921c606442e08a2359ed388116e3);
+            
+
+            regular_polygon_marker_92af1e111bcc4d7e9930ec6ff6a0a108.bindPopup(popup_941832c280ec4feb83e0f48d171177a2)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_622b07ce349b4fceb891a832ec3173f7 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8269,2.2944),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_9766e5df24584db2997d3d4506537e49 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_197ddb955bd7479d973816e404db42ee = $(`<div id="html_197ddb955bd7479d973816e404db42ee" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2016<br> Road Type : 4.0</div>`)[0];
+                popup_9766e5df24584db2997d3d4506537e49.setContent(html_197ddb955bd7479d973816e404db42ee);
+            
+
+            regular_polygon_marker_622b07ce349b4fceb891a832ec3173f7.bindPopup(popup_9766e5df24584db2997d3d4506537e49)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_4c6836f9ea454188a232fbc04b073694 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8343,2.30646),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_833df1a8a5a449bcbc4dd28cb9459b51 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_ac61ae04622f4dc584bedb811a8b9aaf = $(`<div id="html_ac61ae04622f4dc584bedb811a8b9aaf" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_833df1a8a5a449bcbc4dd28cb9459b51.setContent(html_ac61ae04622f4dc584bedb811a8b9aaf);
+            
+
+            regular_polygon_marker_4c6836f9ea454188a232fbc04b073694.bindPopup(popup_833df1a8a5a449bcbc4dd28cb9459b51)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_32b140560cb84af8bd9e93b6cafe7b6e = new L.RegularPolygonMarker(
+                new L.LatLng(48.8393,2.29196),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_5d8a747768374dd59be50eb3cfa8aa7a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_533014eced7d4c7abe0ec4491020e7d0 = $(`<div id="html_533014eced7d4c7abe0ec4491020e7d0" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_5d8a747768374dd59be50eb3cfa8aa7a.setContent(html_533014eced7d4c7abe0ec4491020e7d0);
+            
+
+            regular_polygon_marker_32b140560cb84af8bd9e93b6cafe7b6e.bindPopup(popup_5d8a747768374dd59be50eb3cfa8aa7a)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_87d0e4a117f341928f43ed3518cdf272 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8409,2.28052),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_edb8d1291c7b41a2bfdd755faea531cf = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_ae2e90b4b80749ad938cb3aa6b5179a6 = $(`<div id="html_ae2e90b4b80749ad938cb3aa6b5179a6" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_edb8d1291c7b41a2bfdd755faea531cf.setContent(html_ae2e90b4b80749ad938cb3aa6b5179a6);
+            
+
+            regular_polygon_marker_87d0e4a117f341928f43ed3518cdf272.bindPopup(popup_edb8d1291c7b41a2bfdd755faea531cf)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_efd3afd947724aa487a79ab27210b3c4 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8393,2.29196),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_53cf908b51954298b0c42fc28573adb7 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_dfbeb7b1b0bd4b18b669340c0a24849f = $(`<div id="html_dfbeb7b1b0bd4b18b669340c0a24849f" style="width: 100.0%; height: 100.0%;">Vehicle code : 2<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_53cf908b51954298b0c42fc28573adb7.setContent(html_dfbeb7b1b0bd4b18b669340c0a24849f);
+            
+
+            regular_polygon_marker_efd3afd947724aa487a79ab27210b3c4.bindPopup(popup_53cf908b51954298b0c42fc28573adb7)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_1c29d9c405d04fe59af7fbe3c2600acf = new L.RegularPolygonMarker(
+                new L.LatLng(48.8383,2.28125),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_dfb374aac0564ae28b8745612e83e1bf = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_a8d58ecfd0ba4bfa9fe1797129d21ef3 = $(`<div id="html_a8d58ecfd0ba4bfa9fe1797129d21ef3" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_dfb374aac0564ae28b8745612e83e1bf.setContent(html_a8d58ecfd0ba4bfa9fe1797129d21ef3);
+            
+
+            regular_polygon_marker_1c29d9c405d04fe59af7fbe3c2600acf.bindPopup(popup_dfb374aac0564ae28b8745612e83e1bf)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_d2a6f721021b473ba3690c956eb23447 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8366,2.29854),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_0932f2f87f774c84b82bdcc94219d6f0 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_c9ef675118c54604ba2015a7ed9633a4 = $(`<div id="html_c9ef675118c54604ba2015a7ed9633a4" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_0932f2f87f774c84b82bdcc94219d6f0.setContent(html_c9ef675118c54604ba2015a7ed9633a4);
+            
+
+            regular_polygon_marker_d2a6f721021b473ba3690c956eb23447.bindPopup(popup_0932f2f87f774c84b82bdcc94219d6f0)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_dcfbf45f0f1641038c515a1e4336b2fd = new L.RegularPolygonMarker(
+                new L.LatLng(48.8415,2.30792),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_b4381b4f13b24d5686d0c63010d4de87 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_8ce689aa14eb4078a59178e49f483173 = $(`<div id="html_8ce689aa14eb4078a59178e49f483173" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_b4381b4f13b24d5686d0c63010d4de87.setContent(html_8ce689aa14eb4078a59178e49f483173);
+            
+
+            regular_polygon_marker_dcfbf45f0f1641038c515a1e4336b2fd.bindPopup(popup_b4381b4f13b24d5686d0c63010d4de87)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_d926641895c04627bba19243a7cc049d = new L.RegularPolygonMarker(
+                new L.LatLng(48.8387,2.26978),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_90e594d4635d45c687a37bad3cc0caa4 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_7ad0ff8569bb49ef876e3f6e8ef29f1d = $(`<div id="html_7ad0ff8569bb49ef876e3f6e8ef29f1d" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_90e594d4635d45c687a37bad3cc0caa4.setContent(html_7ad0ff8569bb49ef876e3f6e8ef29f1d);
+            
+
+            regular_polygon_marker_d926641895c04627bba19243a7cc049d.bindPopup(popup_90e594d4635d45c687a37bad3cc0caa4)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_0b50d4b5bb6647e1b63c25300a32de79 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8363,2.28114),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_66e95963c4ed4beabe7fc3a3f7073590 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_94c9c57eccba454686697563a2164a31 = $(`<div id="html_94c9c57eccba454686697563a2164a31" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_66e95963c4ed4beabe7fc3a3f7073590.setContent(html_94c9c57eccba454686697563a2164a31);
+            
+
+            regular_polygon_marker_0b50d4b5bb6647e1b63c25300a32de79.bindPopup(popup_66e95963c4ed4beabe7fc3a3f7073590)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_f73e2169d65646db93a89a45c9c7153e = new L.RegularPolygonMarker(
+                new L.LatLng(48.8464,2.30612),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_052a3cb80e6a4300ba7591d2fc042785 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_35c29af21fd649b58f432736f3996c27 = $(`<div id="html_35c29af21fd649b58f432736f3996c27" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_052a3cb80e6a4300ba7591d2fc042785.setContent(html_35c29af21fd649b58f432736f3996c27);
+            
+
+            regular_polygon_marker_f73e2169d65646db93a89a45c9c7153e.bindPopup(popup_052a3cb80e6a4300ba7591d2fc042785)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_584fba68668141ef860314b5056d89a7 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8336,2.30919),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_6cb75fb8c0174899855961010be0e0c8 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_5904625aea2144e58f5fd2f9212ee35f = $(`<div id="html_5904625aea2144e58f5fd2f9212ee35f" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_6cb75fb8c0174899855961010be0e0c8.setContent(html_5904625aea2144e58f5fd2f9212ee35f);
+            
+
+            regular_polygon_marker_584fba68668141ef860314b5056d89a7.bindPopup(popup_6cb75fb8c0174899855961010be0e0c8)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_d9f79ec2747e4ddbb962a26256c9b565 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8486,2.28289),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_b199b16c3e944fbe9ea60ea9fb52f0c8 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1555d3b5486e4768ae3827f0801249c7 = $(`<div id="html_1555d3b5486e4768ae3827f0801249c7" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_b199b16c3e944fbe9ea60ea9fb52f0c8.setContent(html_1555d3b5486e4768ae3827f0801249c7);
+            
+
+            regular_polygon_marker_d9f79ec2747e4ddbb962a26256c9b565.bindPopup(popup_b199b16c3e944fbe9ea60ea9fb52f0c8)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_9162a9bddc7e4f5e8003e97c8354d569 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8486,2.28289),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_6abf474975ad42eea55cd4de89ca729c = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_7e718e400cf943be890770335173e877 = $(`<div id="html_7e718e400cf943be890770335173e877" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_6abf474975ad42eea55cd4de89ca729c.setContent(html_7e718e400cf943be890770335173e877);
+            
+
+            regular_polygon_marker_9162a9bddc7e4f5e8003e97c8354d569.bindPopup(popup_6abf474975ad42eea55cd4de89ca729c)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_6916199c09394a8eb0791a4db69aa408 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8349,2.27333),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_023741ec424a450da75af835b38c23f6 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_45cbff82437041c5b64206acc7ab9872 = $(`<div id="html_45cbff82437041c5b64206acc7ab9872" style="width: 100.0%; height: 100.0%;">Vehicle code : 33<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_023741ec424a450da75af835b38c23f6.setContent(html_45cbff82437041c5b64206acc7ab9872);
+            
+
+            regular_polygon_marker_6916199c09394a8eb0791a4db69aa408.bindPopup(popup_023741ec424a450da75af835b38c23f6)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_c14ba0ce66844e258ce6c4ec10cbe327 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8399,2.30248),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_f0c13bd0f4a846b7810615854ab5eb58 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b45c9c06c6b6424391e4d08dec703de3 = $(`<div id="html_b45c9c06c6b6424391e4d08dec703de3" style="width: 100.0%; height: 100.0%;">Vehicle code : 32<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_f0c13bd0f4a846b7810615854ab5eb58.setContent(html_b45c9c06c6b6424391e4d08dec703de3);
+            
+
+            regular_polygon_marker_c14ba0ce66844e258ce6c4ec10cbe327.bindPopup(popup_f0c13bd0f4a846b7810615854ab5eb58)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_80f092a682724c779942f42ded819364 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8451,2.28949),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_e930beb5adf549b9ae6c4c0341329431 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b12ae15f35604836ab1cca3fdf07ebe9 = $(`<div id="html_b12ae15f35604836ab1cca3fdf07ebe9" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_e930beb5adf549b9ae6c4c0341329431.setContent(html_b12ae15f35604836ab1cca3fdf07ebe9);
+            
+
+            regular_polygon_marker_80f092a682724c779942f42ded819364.bindPopup(popup_e930beb5adf549b9ae6c4c0341329431)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_7cf4cfaf589940a9bbbdf7013d75fd67 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8372,2.29641),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_2d41eae354604128ae47d5cd4fcadbfc = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_27758f9b519f40b88869c1f9938fe779 = $(`<div id="html_27758f9b519f40b88869c1f9938fe779" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_2d41eae354604128ae47d5cd4fcadbfc.setContent(html_27758f9b519f40b88869c1f9938fe779);
+            
+
+            regular_polygon_marker_7cf4cfaf589940a9bbbdf7013d75fd67.bindPopup(popup_2d41eae354604128ae47d5cd4fcadbfc)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_c5098c4d982c4362a8d1a333e5efc49f = new L.RegularPolygonMarker(
+                new L.LatLng(48.8461,2.27692),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_6d7b8571b48c4901adb4c7c9c0cd784e = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_24ba8cafc1864cacadb697d90793db5a = $(`<div id="html_24ba8cafc1864cacadb697d90793db5a" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_6d7b8571b48c4901adb4c7c9c0cd784e.setContent(html_24ba8cafc1864cacadb697d90793db5a);
+            
+
+            regular_polygon_marker_c5098c4d982c4362a8d1a333e5efc49f.bindPopup(popup_6d7b8571b48c4901adb4c7c9c0cd784e)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_48732c1e2487411e8faae5228d548a4b = new L.RegularPolygonMarker(
+                new L.LatLng(48.8477,2.30159),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_8bd66a0921ff43c08a4bdf52d27996a0 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_cd183a35516d434ebddd7a94c437fb1b = $(`<div id="html_cd183a35516d434ebddd7a94c437fb1b" style="width: 100.0%; height: 100.0%;">Vehicle code : 30<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_8bd66a0921ff43c08a4bdf52d27996a0.setContent(html_cd183a35516d434ebddd7a94c437fb1b);
+            
+
+            regular_polygon_marker_48732c1e2487411e8faae5228d548a4b.bindPopup(popup_8bd66a0921ff43c08a4bdf52d27996a0)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_a28a6549a3534af29868ebc510ed2bf8 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8502,2.28489),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_fb14900c6d7144ba99ba52ecd9b479ab = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_cec17ddf2c1e423fa5758a383aa22885 = $(`<div id="html_cec17ddf2c1e423fa5758a383aa22885" style="width: 100.0%; height: 100.0%;">Vehicle code : 31<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_fb14900c6d7144ba99ba52ecd9b479ab.setContent(html_cec17ddf2c1e423fa5758a383aa22885);
+            
+
+            regular_polygon_marker_a28a6549a3534af29868ebc510ed2bf8.bindPopup(popup_fb14900c6d7144ba99ba52ecd9b479ab)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_672c021bb3a64847b990463efeca0c21 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8372,2.29641),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_3088f0eb51414159b2dfa87dbd90a023 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f39137375494496b8a7aac9391172852 = $(`<div id="html_f39137375494496b8a7aac9391172852" style="width: 100.0%; height: 100.0%;">Vehicle code : 34<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_3088f0eb51414159b2dfa87dbd90a023.setContent(html_f39137375494496b8a7aac9391172852);
+            
+
+            regular_polygon_marker_672c021bb3a64847b990463efeca0c21.bindPopup(popup_3088f0eb51414159b2dfa87dbd90a023)
+            ;
+
+            
+        
+    
+            var regular_polygon_marker_ffdbc63d7208498db1d6736446106f70 = new L.RegularPolygonMarker(
+                new L.LatLng(48.8361,2.2782),
+                {
+                    icon : new L.Icon.Default(),
+                    color: 'black',
+                    opacity: 1,
+                    weight: 2,
+                    fillColor: '#0f51dd',
+                    fillOpacity: 1,
+                    numberOfSides: 4,
+                    rotation: 0,
+                    radius: 5
+                    }
+                ).addTo(map_7d3eaf30ca384129a50fceca6a9630ec);
+            
+    
+            var popup_8926c977da1f4ab5a23d767c5497532f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_a43baba2dcaa470da890587465528d15 = $(`<div id="html_a43baba2dcaa470da890587465528d15" style="width: 100.0%; height: 100.0%;">Vehicle code : 2<br> Year : 2017<br> Road Type : 4.0</div>`)[0];
+                popup_8926c977da1f4ab5a23d767c5497532f.setContent(html_a43baba2dcaa470da890587465528d15);
+            
+
+            regular_polygon_marker_ffdbc63d7208498db1d6736446106f70.bindPopup(popup_8926c977da1f4ab5a23d767c5497532f)
+            ;
+
+            
+        
+</script>

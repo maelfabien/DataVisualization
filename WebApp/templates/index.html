@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/CSS/style.css">
+    <title>Road Accidents</title>
+
+  </head>
+  <body>
+
+<a href="/" style="text-decoration:none">
+      <img src = "static/images/dat.png" width="100%" style="border: 0;">
+    </a>
+
+<div style="margin-left:140px;margin-right:140px;margin-top:10px;">
+
+  <div class="row">
+
+    <div class="column_home" id="left-col" align="center">
+         <form action="/" method="get" align="center">
+         <input type="submit" name="all" value="The Data" align="center">
+       </form>
+    </div>
+
+    <!--
+    All roads
+    -->
+    <div class="column_home" id="left-col" align="center">
+         <form action="/all" method="get" align="center">
+         <input type="submit" name="all" value="All Roads" align="center">
+       </form>
+     </div>
+
+    <!--
+      Commune
+     -->
+     <div class="column_home" id="left-col" align="center">
+         <form action="/com" method="post" align="center">
+         <input type="submit" name="com" value="Communal" align="center">
+       </form>
+     </div>
+
+     <!--
+     Department
+     -->
+     <div class="column_home" id="left-col" align="center">
+         <form action="/dep" method="post" align="center">
+         <input type="submit" name="dep" value="Departmental" align="center">
+       </form>
+     </div>
+
+    <!--
+     National
+     -->
+    <div class="column_home" id="left-col" align="center">
+        <form action="/nat" method="post" align="center">
+          <input type="submit" name="nat" value="National" align="center">
+        </form>
+    </div>
+
+    <!--
+      Highway
+     -->
+    <div class="column_home" id="left-col" align="center">
+        <form action="/aut" method="post" align="center">
+          <input type="submit" name="aut" value="Highway" align="center">
+        </form>
+    </div>
+
+</div>
+
+<br>
+
+
+<div style="text-align:justify">
+  <img src = "static/images/moon.png" width="20%" style="padding-left: 20px;" align="right">
+<br>
+<p> Every year, around 560 billion kilometers are being travelled by car in France. This is 1.5 million times more than the distance between earth and the moon. As a direct consequence, yearly, more than 3’500 die yearly on the French roads. </p>
+
+<br>
+
+<p> Since 2005, the French government has been collecting data about accidents, and open-sourced the data on data.gouv.fr. There are several public actors in France in charge of the road safety : communes, departments, the state and private companies. </p>
+
+<br>
+
+
+<p>In this data visualization project, we will analyze the road traffic accidents from the French national database between 2005 and 2017. The dataset can be downloaded from the following <strong><a href="https://www.data.gouv.fr/en/datasets/base-de-donnees-accidents-corporels-de-la-circulation/">link</a></strong>.</p>
+
+<br>
+
+
+<p>The data are collected by the police each time a traffic accident occurs in France. The data are then aggregated by the “Observatoire national interministériel de la sécurité routière” (ONISR). The data takes the form of 56 CSV files describing, 4 for each of the 14 years of history :
+
+<ul>
+  <li>The vehicles implied </li>
+  <li>The users : passengers/pedestrians </li>
+  <li>A description of the location </li>
+  <li>Characteristics of the accident  </li>
+</ul>
+
+</p>
+
+<p>The are 9 attributes in the vehicles dataset (vehicle category, type of obstacle hurt...), 12 attributes for the passenger / user dataset (including age, sex, activity at the time of the accident...), 18 attributes for the location of the accident (road type, luminosity, road width...), and 16 attributes for the characteristics of the accident (date, time, GPS coordinates...). The 56 files represent 254 Mo overall. </p>
+
+<br>
+
+<p>There are a little more than 1’500’000 entries in the vehicle dataset, each entry being a single vehicle implied in an accident, 2’000’000 entries for the users dataset, each entry being a single person implied in an accident, and 900’000 entries for the location and characteristics, in which each entry represents a single accident.</p>
+
+<br>
+<p>We have used the following technologies in this project :</p>
+<img src = "static/images/techno.png" width="40%" style="border: 0;">
+
+<br>
+
+<p>In this section, we present some visualizations that are useful for data exploration purposes and in which the user might be interested.</p>
+
+<br>
+</div></div>
+
+
+<br>
+
+<div style="margin-left:70px">
+
+<iframe src="static/graphs/explo_1.html" width="100%" height="400px" frameBorder="0"></iframe>
+
+<iframe src="static/graphs/explo_2.html" width="100%" height="800px" frameBorder="0"></iframe>
+
+<iframe src="static/maps/multiple_interactions_all.html" width="100%" height="900px" frameBorder="0"></iframe>
+
+</div>
+
+<br>
+
+
+  </body>
+</html>
