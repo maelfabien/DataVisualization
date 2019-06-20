@@ -29,11 +29,11 @@ To set the context, there are several visualizations that we present in this sec
 
 - Number of accidents per day in France :
 
-![image](/Images/ts.png)
+![image](/Images/ts_2.png)
 
 - Location of the accidents :
 
-![image](/Images/loc.png)
+![image](/Images/loc_2.png)
 
 
 ## III. Designs
