@@ -35,10 +35,6 @@ To set the context, there are several visualizations that we present in this sec
 
 ![image](/Images/loc.png)
 
-- Map of the accidents implying a death :
-
-![image](/Images/death.png)
-
 
 ## III. Designs
 
