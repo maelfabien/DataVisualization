@@ -25,7 +25,7 @@ We used the following technologies for this project :
 
 ## II. Exploration
 
-In this section, we'll present the key visualization.
+To set the context, there are several visualizations that we present in this section : https://infoviz.onrender.com/?all=The+Data
 
 - Number of accidents per day in France :
 
