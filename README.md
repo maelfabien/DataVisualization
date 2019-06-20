@@ -18,6 +18,11 @@ The are 9 attributes in the vehicles dataset (vehicle category, type of obstacle
 
 There are a little more than 1 500 000 entries in the vehicle dataset, each entry being a single vehicle implied in an accident, 2’000’000 entries for the users dataset, each entry being a single person implied in an accident, and 900’000 entries for the location and characteristics, in which each entry represents a single accident.
 
+We used the following technologies for this project :
+
+![image](/Images/techno.png)
+
+
 ## II. Exploration
 
 In this section, we'll present the key visualization.
