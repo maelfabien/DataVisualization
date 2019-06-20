@@ -22,6 +22,10 @@ We used the following technologies for this project :
 
 ![image](/Images/techno.png)
 
+We developped a WebApp accessible right here : https://infoviz.onrender.com/
+
+![image](/Images/webapp.png)
+
 
 ## II. Exploration
 
