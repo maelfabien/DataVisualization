@@ -27,11 +27,11 @@ We used the following technologies for this project :
 
 To set the context, there are several visualizations that we present in this section : https://infoviz.onrender.com/?all=The+Data
 
-- Number of accidents per day in France :
+- Age of the victime and Number of accidents per day in France :
 
 ![image](/Images/ts_2.png)
 
-- Location of the accidents :
+- Time of the accidents and Location of the accidents :
 
 ![image](/Images/loc_2.png)
 
@@ -42,11 +42,14 @@ Our analysis could bring value to several road authorities in France :
 - Communes, that are in charge of communal roads
 - Departments, that are in charge of departmental roads
 - The state, in charge of the national roads
+- Private companies (Vinci) in charge of Highways
 
 We except our end users to use our tool to :
 - **Sensitize** the youngsters and road criminals on the danger of the roads depending on the transportation mode they are using.
 - **Prevent** road dangers through a tool that would advise the best road characteristics for a road rehabilitation, and visually illustrate the outcome of the algorithm
 - **Monitor** the dangers of the roads (at difference scales, including Communes, Departments and Nation) by allowing the user to select geographic zones and filters (weather conditions, hour of the day…) to gain additional insights
+
+For this reason, we subdivided our website into several sections (Data exploration, All roads, Communal, Departmental, National, and highway roads) and in each case, Sensitize, Prevent and Monitor sections.
 
 ### 1. Sensitization
 
@@ -81,7 +84,7 @@ We have used Plotly as the main framework for this visualization. The interactiv
 
 This also allows us to highlight the importance of wearing all the necessary security equipments. When the user clicks on a branch of the graph, this highlights the values of this branch specifically, and displays in a tooltip additional information and exact numbers about this branch.
 
-![image](/Images/sankey_final.png)
+![image](/Images/sankey_final_2.png)
 
 Although we do believe that the design manages to display the right message, there are several limits that we would like to highlight :
 - The complexity of the graph has been highly reduced in order to make it understandable for the end users
@@ -119,7 +122,7 @@ We decided to add interactivity at several levels :
 
 Indeed, we created three buttons (Communal, Departmental, State) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually. For example, here is the T-SNE embedding of the communal roads in France.
 
-![image](/Images/tsne-final.png)
+![image](/Images/tsne-final_2.png)
 
 The blue dot corresponds to the user’s input. We observe in this case that it is among the worse class. If the user wants to optimize the accident profile of the road, he might be interested in exploring the points at the green limit or at the orange limit.
 
