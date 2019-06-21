@@ -71,7 +71,7 @@ In this visualization, we created a Sankey diagram (flow chart) that shows the p
 
 Our initial sketch of the design looked like this :
 
-![image](/Images/sankey.png)
+![image](/Images/sankey_final_weather.png)
 
 We intended to support a filter on the type of roads (communal, departmental, national), and to observe the difference of survival rate of the different categories of road users depending on the speed on the road. This would illustrate how the speed of a car impacts the survival rate of the other road users.
 
@@ -134,7 +134,7 @@ We decided to add interactivity at several levels :
 - Through the selection on the T-SNE
 - By allowing the user to select the kind of road he’s interested in.
 
-Indeed, we created three buttons (Communal, Departmental, State, Highway) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually. 
+Indeed, we created three buttons (Communal, Departmental, State, Highway) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually.
 
 We decided not to implement the accident rate prediction in the final version since it would have required a dedicated page on the website which kills a bit the interactivity. However, as we developped this design, an idea came to our mind. Instead of letting the user explore the tooltip in green or red regions, and try by himself to understand the distribution of parameters, why not use the T-SNE plot as a **trackpad** in which the user can select regions, and we then display histograms of the values of parameters in this region.
 
