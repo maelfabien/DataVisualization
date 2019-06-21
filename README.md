@@ -71,7 +71,7 @@ In this visualization, we created a Sankey diagram (flow chart) that shows the p
 
 Our initial sketch of the design looked like this :
 
-![image](/Images/sankey_final_weather.png)
+![image](/Images/sankey_final.png)
 
 We intended to support a filter on the type of roads (communal, departmental, national), and to observe the difference of survival rate of the different categories of road users depending on the speed on the road. This would illustrate how the speed of a car impacts the survival rate of the other road users.
 
@@ -96,7 +96,7 @@ The supported interactions are the following :
 
 This allows us to highlight the importance of wearing all the necessary security equipments. When the user hovers on a branch of the graph, this displays exact numbers about this branch. We also created filter buttons to allow the users to observe different scenarios (i.e on weather conditions or luminosity).
 
-![image](/Images/sankey_final_2.png)
+![image](/Images/sankey_final_weather.png)
 
 Although we do believe that the design manages to display the right message, there are several limits that we would like to highlight :
 - The complexity of the graph has been highly reduced in order to make it understandable for the end users
