@@ -2,6 +2,8 @@
 
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/maelfabien.svg?style=social"> <img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/maelfabien/DataVisualization.svg"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/maelfabien/DataVisualization.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/3.svg">
 
+![image](/Images/demo.gif)
+
 ## I. Project description
 
 **Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien**
