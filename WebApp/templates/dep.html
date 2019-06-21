@@ -21,32 +21,6 @@
     <br>
 
     <style>
-
-      .condition {
-        background-color: white;
-        color: black;
-        width: 100px;
-        height: 30px;
-        border: 2px solid #4CAF50;
-        border-radius: 12px;
-        padding: 4px 10px;
-        font-size: 8px;
-        cursor: pointer;
-        text-align: center;
-        transition-duration: 0.4s;
-      }
-      .condition:hover {
-        background-color: #4CAF50; /* Green */
-        color: white;
-      }
-      .condition:active{
-        background-color: #4CAF50; /* Green */
-        color: white;
-      }
-      .condition:focus{
-        background-color: #4CAF50; /* Green */
-        color: white;
-      }
       .link {
         fill: none;
         stroke: #000;
@@ -200,16 +174,55 @@
 </div>
 <br>
 <br>
-<div class="row">
 
-  <i>Conditions d'éclairages:</i>
-    <button class="condition" onclick="update('Départementale_crep')">Jour</button>
-    <button class="condition" onclick="update('Départementale_crep')">Crépuscule</button>
-    <button class="condition" onclick="update('Départementale_nuit_sans_ecl')">Nuit sans éclairage</button>
-    <button class="condition" onclick="update('Départementale_nuit_avec_ecl')">Nuit avec éclairage</button>
-    <button class="condition" onclick="update('Départementale')">Sans conditions</button>
+  <div class="radio_left" align="left">
+    <p ><b>Conditions atmosphérique:</b></p>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_norm_" onclick="update_condition()" /> Normale
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_plui_" onclick="update_condition()" /> Pluie
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_couv_" onclick="update_condition()" /> Temps couvert
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_sol_" onclick="update_condition()" /> Temps ensoleillé
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_brou_" onclick="update_condition()" /> Brouillard
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_neig_" onclick="update_condition()" /> Neige - grêle
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="_vent_" onclick="update_condition()" />  Vent fort
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_atm" value="" onclick="update_condition()" checked/> Aucune
+    </label>
   </div>
 
+  <br>
+  <div class="radio_right" align="left">
+    <p><b>Conditions d'éclairages:</b></p>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_ecl" value="_jour_" onclick="update_condition()" /> Jour
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_ecl" value="_crep_" onclick="update_condition()" /> Crépuscule
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_ecl" value="_nuit_sans_ecl_" onclick="update_condition()" /> Nuit sans éclairage
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_ecl" value="_nuit_avec_ecl_" onclick="update_condition()" /> Nuit avec éclairage
+    </label>
+    <label>
+        <input type="radio" class="option-input radio" type="radio" name="colorButton_ecl" value="" onclick="update_condition()" checked/> Aucune
+    </label>
+  </div>
+<br>
 <br>
 <br>
 
@@ -345,16 +358,24 @@ d3.json("static/js/Départementale.json", function(error, graph) {
     link.attr("d", sankey.link());
   }
 });
-
 // Update data on button
-function update (selectedVar){
+function update_condition (){
+
   // load the data
-  d3.json("static/js/" + selectedVar + ".json", function(error, graph) {
+  var selected_ecl = d3.select('input[name="colorButton_ecl"]:checked').node().value
+  var selected_atm = d3.select('input[name="colorButton_atm"]:checked').node().value
+
+  console.log(selected_ecl + selected_atm)
+
+  d3.json("static/js/Départementale" + selected_ecl + selected_atm + ".json", function(error, graph) {
+
     // Constructs a new Sankey generator with the default settings.
     sankey.nodes(graph.nodes).links(graph.links).layout(1);
     console.log(graph.links)
+
     // Relayout the Sankey
     sankey.relayout();
+
     // add in the links
     svg.selectAll(".link")
       .data(graph.links)
@@ -363,11 +384,13 @@ function update (selectedVar){
       .attr("d", sankey.link())
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
       .style("opacity", function(d) {return d.alpha;})
+
     // add in the nodes
     svg.selectAll(".node")
       .data(graph.nodes)
       .transition()
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
     // add the rectangles for the nodes
     svg.selectAll(".node rect")
       .data(graph.nodes)
@@ -375,6 +398,7 @@ function update (selectedVar){
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d){ return d.color; })
       .style("stroke", function(d) { return d3.rgb(d.color).darker(2); });
+
     // add in the title for the nodes
     svg.selectAll(".node text")
         .transition()
@@ -386,16 +410,15 @@ function update (selectedVar){
         .text(function(d) { return d.name; })
         .attr("x", 6 + sankey.nodeWidth())
         .attr("text-anchor", "start");
+
     // add gradient to links
     defs.selectAll('linearGradient').remove();
     svg.selectAll(".link").style('stroke', (d, i) => {
+
       // make unique gradient ids
       var gradientID = `gradient${i}`;
       var startColor = d.source.color;
       var stopColor = d.target.color;
-      console.log(d.source.name + d.source.color)
-      console.log(d.target.name + d.target.color)
-      console.log(gradientID)
       var linearGradient = defs.append('linearGradient')
           .attr('id', gradientID);
       linearGradient.selectAll('stop')
@@ -412,6 +435,7 @@ function update (selectedVar){
         });
       return `url(#${gradientID})`;
     });
+
     // the function for moving the nodes
     function dragmove(d) {
       d3.select(this)
@@ -427,8 +451,7 @@ function update (selectedVar){
       link.attr("d", sankey.link());
     }
   });
-};
-
+}
 
 </script>
 
