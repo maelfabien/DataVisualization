@@ -179,7 +179,7 @@ We then decided to re-use the idea of having a central trackpad which would be a
 
 Since this is a monitoring tool, we expect the gravity of the accident to be at the core of any decision being taken. For this reason, we decided to encode the color scheme depending on the gravity of the accidents.
 
-![image](/Images/map-final_2.png)
+![image](/Images/map-final.png)
 
 *Limits of the design* :
 
