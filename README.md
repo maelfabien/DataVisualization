@@ -2,11 +2,11 @@
 
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/maelfabien.svg?style=social"> <img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/maelfabien/DataVisualization.svg"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/maelfabien/DataVisualization.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/3.svg">
 
+**Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien**
+
 <img src="/Images/demo.gif" width="100%" height="100%">
 
 ## I. Project description
-
-**Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien**
 
 In this data visualization project, we are analyzing the road traffic accidents from the [French Database](https://www.data.gouv.fr/en/datasets/base-de-donnees-accidents-corporels-de-la-circulation/)
 
@@ -31,7 +31,7 @@ We developped a WebApp accessible right here : https://infoviz.onrender.com/
 
 ## II. Exploration
 
-To set the context, there are several visualizations that we present in this section : https://infoviz.onrender.com/?all=The+Data
+To allow the user to explore the data and understand the context, there are several visualizations that we present in this section : https://infoviz.onrender.com/?all=The+Data
 
 - Age of the victime and Number of accidents per day in France :
 
@@ -50,14 +50,14 @@ Our analysis could bring value to several road authorities in France :
 - Communes, that are in charge of communal roads
 - Departments, that are in charge of departmental roads
 - The state, in charge of the national roads
-- Private companies (Vinci) in charge of Highways
+- Private companies (e.g. Vinci) in charge of french highways
 
 We except our end users to use our tool to :
 - **Sensitize** the youngsters and road criminals on the danger of the roads depending on the transportation mode they are using.
 - **Prevent** road dangers through a tool that would advise the best road characteristics for a road rehabilitation, and visually illustrate the outcome of the algorithm
 - **Monitor** the dangers of the roads (at difference scales, including Communes, Departments and Nation) by allowing the user to select geographic zones and filters (weather conditions, hour of the day…) to gain additional insights
 
-For this reason, we subdivided our website into several sections (Data exploration, All roads, Communal, Departmental, National, and highway roads) and in each case, Sensitize, Prevent and Monitor sections.
+For this reason, we subdivided our website into several tabs (Data exploration, All roads, Communal, Departmental, National, and highway roads) and in each tab, in several sections : Sensitize, Prevent and Monitor.
 
 ### 1. Sensitization
 
@@ -65,7 +65,7 @@ For this reason, we subdivided our website into several sections (Data explorati
 
 Local police and communes are working together on sensitization of the youngster on the road dangers. One might believe that dangers for these kids arise once they have their first motorcycle or car. However, if they are involved in an accident, death rates among bike riders and pedestrians are incredibly high compared to other transportation means.
 
-We selected a Sankey diagram (flow chart) to illustrate the dangers of the road, not only for car users, but also for pedestrians, bike riders or motorcyclists. The aim of this design is to convey a simple, easily understandable yet visually efficient message.
+In this visualization, we created a Sankey diagram (flow chart) that shows the proportion of pedestrians, bike riders, motorcycles and cars involved in a crash these last 13 years, distinguishes if they were wearing all security equipments, and finally shows the survival rate among each category. This graph clearly illustrates the fragility and the exposure of pedestrians and bike riders, and contributes to sensitization of these populations.
 
 *Design sketch* :
 
@@ -73,7 +73,7 @@ Our initial sketch of the design looked like this :
 
 ![image](/Images/sankey.png)
 
-We intend to support a filter on the type of roads (communal, departmental, national), and to observe the difference of survival rate of the different categories of road users depending on the speed on the road. This would illustrate how the speed of a car impacts the survival rate of the other road users.
+We intended to support a filter on the type of roads (communal, departmental, national), and to observe the difference of survival rate of the different categories of road users depending on the speed on the road. This would illustrate how the speed of a car impacts the survival rate of the other road users.
 
 The design helps the reader understand the distribution of the volume of road users accident, depending on the kind of road being used, as well as the effect of speed.
 
@@ -85,12 +85,16 @@ Then, one of the other challenges was to find the right tradeoff between the com
 
 *Technologies and outcome* :
 
-We have used Plotly as the main framework for this visualization. The interactivity offered by the JavaScript behind Plotly allow us to display :
+We have used D3.js as the main framework for this visualization. The interactivity offered by JavaScript allows us to display :
 - The input classes : Car, Truck, Motorcycle, Bike, Pedestrian
-- The middle layer : Wearing the security equipment or not
-- The output layer : Death, harmed, unharmed
+- The middle layer : Death, harmed, unharmed
+- The output layer : Wearing the security equipment or not
 
-This also allows us to highlight the importance of wearing all the necessary security equipments. When the user clicks on a branch of the graph, this highlights the values of this branch specifically, and displays in a tooltip additional information and exact numbers about this branch.
+The supported interactions are the following :
+
+![image](/Images/int_1.png)
+
+This allows us to highlight the importance of wearing all the necessary security equipments. When the user hovers on a branch of the graph, this displays exact numbers about this branch. We also created filter buttons to allow the users to observe different scenarios (i.e on weather conditions or luminosity).
 
 ![image](/Images/sankey_final_2.png)
 
@@ -104,9 +108,9 @@ Although we do believe that the design manages to display the right message, the
 
 *Motivation* :
 
-There are critical decisions taken by road authorities when it comes road rehabilitation or construction. It is indeed necessary to choose the width of the road, the turn angle, the speed of the road, whether the road should have a median strip or not… All these decisions can have a large impact on the future accident profile of this road. Although road authorities in France are used to exploit the datasets we are presenting, we believe that a design that allows them to observe the accident profile of similar roads could be a great decision support tool.
+Can communes, departments, or even the state prevent crashes before they occur? To answer this vast question, we created a graph whose role is to cluster the types of roads (width, surface, infrastructure, proximity of a school…), and their related accident rate, thanks to a T-SNE embedding. We reduce dimension to allow the user to visualize high dimensional problems in a simple dashboard. Thanks to this visualization, we expect road authorities to be able to adjust the characteristics of a road when building or renovating a road.
 
-Our aim is also to develop a Machine Learning model able to predict the accident profile of a road given its characteristics. Overall, if our design is successful, it should help prevent some accidents linked to profiles of roads. The main point of embedding is to unlock insights on high dimensional problems.
+The user can select the type of road from the different pages(communal, departmental, national), and in each case, observe the clusters created by T-SNEs. The green clusters represent a low accident rate, and the red ones a high one. The user can hover on a given point to observe all the characteristics of a given road, and select a region in the T-SNE plot. When selecting a region, the histograms all around the plot are updated. This allows users to understand the local distributions of variables on which they can have an impact when building a new road.
 
 *Design Sketch* :
 
@@ -114,34 +118,38 @@ Our initial sketch of the design looked like this :
 
 ![image](/Images/tsne.png)
 
-The user is able to set some constraints, i.e environment linked constants that cannot be changed. On the other hand, he sets some variables (width of a road, speed, median strip width…). Based on these constraints and variables, we can compute a T-SNE embedding of the roads that share the same constraints. This way, the user is able to see where the profile of the manually specified road stands compared to other roads that share the same constraints.
+The user can set some constraints, i.e environment linked constants that cannot be changed. On the other hand, he sets some variables (width of a road, speed, median strip width…). Based on these constraints and variables, we can compute a T-SNE embedding of the roads that share the same constraints. This way, the user is able to see where the profile of the manually specified road stands compared to other roads that share the same constraints.
 
 Then, to explore and help his decision, we provide a tooltip that allows the user to display the information related to the road on the graph. The tooltip shows information about the characteristics of each road.
 If the user observes that his road stands within a red region, i.e a large number of accident recorded since 2005, it should typically lead the user to challenge his initial hypothesis. In such case, our visualization tool would come as an exploration tool to see if there are some better characteristics that can be chosen among roads that share similar characteristics.
 
-Finally, we provide the user a prediction of the accident profile of his road. We created a scale, that ranges from 1 to 5 and describes the cumulated amount of accidents. We chose to implement a Random Forest Classifier that is trained on the whole dataset. This additional information should simply relate a no-go scenario in case the accident profile is among the worst class for example. The accuracy achieved by this algorithm, although it’s not the main focus here, is a little higher than 52% in this 5-class framework.
+Finally, we provide the user a prediction of the accident profile of his road. We created a scale, that ranges from 1 to 5 and describes the cumulated amount of accidents. We chose to implement a Random Forest Classifier that is trained on the whole dataset. This additional information should simply relate a no-go scenario in case the accident profile is among the worst class for example. The accuracy achieved by this algorithm, although it’s not the main focus here, is a little higher than 66% in this 5-class framework.
 
 *Technologies and outcome* :
 
 We have used Altair as the main support for this graph. Altair offers a simple way to display tooltips, and offers a web support to export a graph in HTML format.
+
 We decided to add interactivity at several levels :
 - Through the tooltip
+- Through the selection on the T-SNE
 - By allowing the user to select the kind of road he’s interested in.
 
-Indeed, we created three buttons (Communal, Departmental, State) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually. For example, here is the T-SNE embedding of the communal roads in France.
+Indeed, we created three buttons (Communal, Departmental, State, Highway) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually. 
+
+We decided not to implement the accident rate prediction in the final version since it would have required a dedicated page on the website which kills a bit the interactivity. However, as we developped this design, an idea came to our mind. Instead of letting the user explore the tooltip in green or red regions, and try by himself to understand the distribution of parameters, why not use the T-SNE plot as a **trackpad** in which the user can select regions, and we then display histograms of the values of parameters in this region.
+
+For example, here is the T-SNE embedding of all roads in France.
 
 ![image](/Images/tsne-final_2.png)
 
-The blue dot corresponds to the user’s input. We observe in this case that it is among the worse class. If the user wants to optimize the accident profile of the road, he might be interested in exploring the points at the green limit or at the orange limit.
+On this graph, we notice that several histograms are displayed around the T-SNE. The color scheme on the histogram gives us the contribution of each accident profile (from 1 to 5) to each histogram.
 
 *Limits of the design* :
 
 This design, due to its custom functionalities and quite original side, comes with several limitations :
 - The main bias is that we have to think in terms of absolute number of accidents, since each record relates a single accident. However, there must be some dominant kind of roads in France, which means that it would be more relevant to think in terms of accident rate than absolute number of accidents
 - There could be a cursor to show the evolution over time of this graph
-- The interactivity could be improved to allow, for example, the user to add new points on the map
-- The algorithm could output a single best road that is the closest (in terms of distance on the T-SNE map) to the input road characteristics
-- The T-SNE embedding cannot be used to make a fit-transform and cannot compute the embedding of additional points. Therefore, exploring other dimension reduction techniques such as PCA could help bring interactivity on this level. Moreover, the T-SNE embedding does not output the same graph at each run
+- The T-SNE embedding cannot be used to make a fit-transform and cannot compute the embedding of additional points that the user would enter for example. Therefore, exploring other dimension reduction techniques such as PCA could help bring interactivity on this level. Moreover, the T-SNE embedding does not output the same graph at each run
 - The data cleaning can be improved, by adding some outlier detection for example
 
 
