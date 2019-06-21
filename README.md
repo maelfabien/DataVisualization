@@ -194,18 +194,18 @@ The design is interesting and we believe can bring value to authorities in charg
 <img src="https://avatars1.githubusercontent.com/u/43547776?v=4" width="100px;" alt="Anatoli-deBRADKE"/>
 <br />
 <sub><b>Anatoli-deBRADKE</b></sub>
-</a><br /><a href="https://github.com/maelfabien/DataViz/commits?author=Anatoli-deBRADKE" title="Code">💻</a></td>
+</a><br /></td>
 <td align="center"><a href="https://github.com/maelfabien"><img src="https://avatars0.githubusercontent.com/u/24256555?v=4" width="100px;" alt="mfix22"/>
 <br /><sub><b>maelfabien</b></sub>
-</a><br /><a href="https://github.com/maelfabien/DataViz/commits?author=maelfabien" title="Code">💻</a></td>
+</a><br /></td>
 <td align="center"><a href="https://github.com/RaphaelLederman"><img src="https://avatars2.githubusercontent.com/u/38351531?v=4" width="100px;" alt="mfix22"/>
 <br /><sub><b>RaphaelLederman</b></sub>
-</a><br /><a href="https://github.com/maelfabien/DataViz/commits?author=RaphaelLederman" title="Code">💻</a></td>
+</a><br /></td>
 <td align="center"><a href="https://github.com/AlexPeterBec"><img src="https://avatars0.githubusercontent.com/u/10231302?s=400&v=4" width="100px;" alt="mfix22"/>
 <br /><sub><b>AlexPeterBec</b></sub>
-</a><br /><a href="https://github.com/maelfabien/DataViz/commits?author=AlexPeterBec" title="Code">💻</a></td>
+</a><br /></td>
 <td align="center"><a href="https://github.com/AnthonyHoudaille"><img src="https://avatars3.githubusercontent.com/u/31823617?s=400&v=4" width="100px;" alt="mfix22"/>
 <br /><sub><b>AnthonyHoudaille</b></sub>
-</a><br /><a href="https://github.com/maelfabien/DataViz/commits?author=AnthonyHoudaille" title="Code">💻</a></td>
+</a><br/></td>
 
 </tr></table>
