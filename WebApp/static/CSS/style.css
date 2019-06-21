@@ -200,12 +200,12 @@ ul {
   -o-appearance: none;
   appearance: none;
   position: relative;
-  top: 5px;
-  right: 0;
-  bottom: 0;
+  top: 9px;
+  right: 0px;
+  bottom: 0px;
   left: 0;
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -224,14 +224,14 @@ ul {
   background: #272c4c;
 }
 .option-input:checked::before {
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   position: absolute;
   content: '✔';
   display: inline-block;
   font-size: 13px;
   text-align: center;
-  line-height: 22px;
+  line-height: 20px;
 }
 .option-input:checked::after {
   -webkit-animation: click-wave 0.65s;
