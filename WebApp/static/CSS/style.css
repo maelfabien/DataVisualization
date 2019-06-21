@@ -175,6 +175,8 @@ ul {
 
 
 
+
+
 @keyframes click-wave {
   0% {
     height: 40px;
@@ -247,6 +249,11 @@ ul {
 .option-input.radio::after {
   border-radius: 50%;
 }
+
+
+
+
+
 
 input[type="button"] {
     border-radius: 10px;
@@ -381,4 +388,28 @@ textarea {
      background-color: HotPink;
      padding: 20px;
      margin: 5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size:10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
