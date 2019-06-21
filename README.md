@@ -44,6 +44,8 @@ To set the context, there are several visualizations that we present in this sec
 
 ## III. Designs
 
+> The aim of this DataVisualization project is to identify several designs that could potentially bring value to users trying to achieve a specific task.
+
 Our analysis could bring value to several road authorities in France :
 - Communes, that are in charge of communal roads
 - Departments, that are in charge of departmental roads
