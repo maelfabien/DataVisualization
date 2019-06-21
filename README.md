@@ -4,6 +4,8 @@
 
 ![image](/Images/demo.gif){:height="50%" width="50%"}
 
+<img src="/Images/demo.gif" width="100" height="100">
+
 ## I. Project description
 
 **Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien**
