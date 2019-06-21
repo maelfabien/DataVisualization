@@ -2,7 +2,7 @@
 
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/maelfabien.svg?style=social"> <img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/maelfabien/DataVisualization.svg"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/maelfabien/DataVisualization.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/3.svg">
 
-**Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien**
+*Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien*
 
 <img src="/Images/demo.gif" width="100%" height="100%">
 
@@ -157,11 +157,9 @@ This design, due to its custom functionalities and quite original side, comes wi
 
 *Motivation* :
 
-Monitoring the number of accidents on roads is not an easy task. Communes and departments might be aware of roads in which there are empirically more accidents. However, it might become really hard to deal with the large amount of variables observed at each accident : weather conditions, hour of the day, number of passengers… Moreover, it is really hard to visualize the accident profile of roads at different scales (a single commune, or the whole state), compared to other places (how does a commune perform compared to another), over time (year by year) given filters.
+The last task of road authorities is to monitor the roads, and the accident rates on each road. Additional security measures might be needed in certain cases, or certain conditions. Local authorities might have an idea of what kind of road is dangerous, but our visualization should bring a clear overall view, and allow the user to understand a high dimensional spatial problem and the distributions of several factors that act on the gravity of an accident.
 
-For this reason, we wanted to develop a tool that looks really simple at first sight, i.e two maps and a set of filters.  This tool is however really powerful, since it covers all the needs described above. The user can set filters and observe the interaction between them. For example, the  end user will be able to monitor the accidents that occurred during the night, implied male drivers, with snowy conditions, at the level of his commune or of the department for example.
-
-The filters can be : night vs.day, death vs. unharmed, weather condition, year, sex of the driver… The main idea behind such a complete tool is to allow authorities to gain insights on a large dimensional problem, with cumulative filters : for example, deaths on snowy days, by night, since 2005. Clusters can then be visually defined, and actions can be taken from this perspective.
+We expect the user to select regions on the map of France, and see all the histograms being updated live. This can be useful to understand the distributions in a given region, and by navigating though the different tabs of the website, focus on the different types of roads.
 
 A concrete way to apply the insights gained from this design would be for a department to take a look at the design on certain weather conditions, in certain luminance conditions, identify clusters, and decide to take special actions from this observation. It could mean additional security measures, reduced speed, radars…
 
@@ -171,54 +169,23 @@ Our initial sketch of the design looked like this :
 
 ![Initial map](/Images/initial_map.png)
 
-The main feature is to visualize two maps at the same time, and the location of the accidents on the two maps according to filters. The interesting point it to be able to compare different scales and how they react to filters :
-- Commune vs. Commune
-- Commune vs. department
-- Commune vs. Region
-- Commune vs. state
-- Department vs. region
-- Department vs. state
-- Region vs.state
-
-Instead of computing several graphs, all the information is loaded on a single graph. The filters are cumulative, which means that the users can explore the interactions between all filters.
-
-Since we have a lot of features, it was tempting to display them in additional dimensions instead of filters. We could play on the size of dots, on their color, on the marker, on the angle of the marker… In the end, the user would have surely been lost, which is the reason why we chose filters.
-
-*Data processing and challenges* :
-
-For this visualization, we focus on the characteristics dataset. Many entries in
-the characteristics dataset do not contain GPS coordinates. These observations
-had to be removed, in most cases, more than 50% of the data does not contain GPS coordinates.
-
-Then, some outliers were located in Switzerland for example or in neighboring
-countries. We also removed those points. We also chose to only focus on the
-metropolitan area, and exclude the DOM-TOM of our analysis.
-
-We also expect the user to use the tooltip provided to get the micro-macro view
-and explore the details of a single accident if needed.
+The main feature was to visualize two maps at the same time, and the location of the accidents on the two maps according to filters. Instead of computing several graphs, all the information is loaded on a single graph. The filters are cumulative, which means that the users can explore the interactions between all filters.
 
 *Technologies and outcome* :
 
-We use [Folium map plotting tool](https://python-visualization.github.io/folium/)
-as our main framework. Folium is lightweight and relatively easy to configure in Python,
-and has some good interactive features,
-it provides a dynamic map where the user can zoom in & out to focus on specific
-areas. We included a tooltip on click with details about the accident.
+We tried several implementations, including with [Folium map plotting tool](https://python-visualization.github.io/folium/), or with Altair. However, there seemed to be no great tool for webapps. For this reason, we switched a bit the concept of the graph, although a great interactive tool is present in the `graph3-monitoring` Monitoring notebook.
 
-In the end, we built an exploration tool with a high level of specificity on the
-data to display. Here are the filters offered by the tool in the notebook :
+We then decided to re-use the idea of having a central trackpad which would be a 2D representation of the dataset, and understand the distributions around it. For the monitoring part, the spatial representation is an obvious choice. Therefore, we have a map of France in the center, and live updated histograms on the side that react to the regions the user selects on the map.
 
-<img src="/Images/filter_buttons.png" alt="Buttons image" width="700"/>
+Since this is a monitoring tool, we expect the gravity of the accident to be at the core of any decision being taken. For this reason, we decided to encode the color scheme depending on the gravity of the accidents.
 
-As Folium supports HTML exports, we extracted some key views to display on our
-web interface for demonstration.
+![image](/Images/map-final_2.png)
 
 *Limits of the design* :
 
 The design is interesting and we believe can bring value to authorities in charge of these questions. However, it suffers from some limitations :
 - The data source is updated once a year only, which means that the data of year 2019 are not present at all.
-- The interactivity remains limited due to the dataset size. Having filters means we have a very large dataset at the beginning. Therefore, the full dataset cannot be embedded in a web application.
-- Filters list can be extended to interact with every parameter available, but there would be too much of parameters.
+- We could add buttons allowing the user to zoom on a department or a commune for example
 
 ## IV. Contributors
 
