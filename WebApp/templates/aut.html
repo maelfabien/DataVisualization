@@ -208,8 +208,8 @@
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 150, bottom: 10, left: 10},
-    width = 1450 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 1400 - margin.left - margin.right,
+    height = 580 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#sankey_aut").append("svg")
@@ -231,7 +231,7 @@ var $ = document.querySelector.bind(document);
 var $on = document.addEventListener.bind(document);
 
 var x = void 0,
-      y = void 0, 
+      y = void 0,
         dx = void 0,
           dy = void 0,
             tx = 0,
@@ -244,7 +244,7 @@ $on('mousemove', function(e) {
     xmouse = e.clientX || e.pageX;
     ymouse = e.clientY || e.pageY;
 });
-      
+
 
 var div_toolt = $('.d3-tip');
 
