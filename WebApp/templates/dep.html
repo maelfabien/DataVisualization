@@ -7,7 +7,8 @@
     <title>Department view</title>
 
   </head>
-  <body>
+  <body onload = "followMouse();">
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -31,23 +32,12 @@
       /* Creates a box for the tooltip */
       .d3-tip {
         line-height: 1;
+        position: absolute;
         font-weight: bold;
         padding: 12px;
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
         border-radius: 2px;
-      }
-      /* Creates a small triangle extender for the tooltip */
-      .d3-tip:after {
-        box-sizing: border-box;
-        display: inline;
-        font-size: 10px;
-        width: 100%;
-        line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
-        content: "\25BC";
-        position: absolute;
-        text-align: center;
       }
       /* Style northward tooltips differently */
       .d3-tip.n:after {
@@ -242,15 +232,56 @@ var svg = d3.select("#sankey_dep").append("svg")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //  tooltip
-var tip = d3.tip()
- .attr('class', 'd3-tip')
- .offset([-1, 1])
- .html(function(d) {
-   return d.legend;
- })
+var div_tooltip = d3.select("body")
+  .append("div")
+            .attr("class","d3-tip")
+            .attr("color","grey")
+            .attr("fill-opacity","0")
+            .style("opacity","0")
 
-// Add tooltip to svg
-svg.call(tip);
+var $ = document.querySelector.bind(document);
+var $on = document.addEventListener.bind(document);
+
+var x = void 0,
+      y = void 0, 
+        dx = void 0,
+          dy = void 0,
+            tx = 0,
+              ty = 0,
+                key = -1;
+
+
+var xmouse, ymouse;
+$on('mousemove', function(e) {
+    xmouse = e.clientX || e.pageX;
+    ymouse = e.clientY || e.pageY;
+});
+      
+
+var div_toolt = $('.d3-tip');
+
+var followMouse = function followMouse() {
+  key = requestAnimationFrame(followMouse);
+
+  if(!x || !y) {
+    x = xmouse;
+    y = ymouse;
+  } else {
+    dx = (xmouse - x) ;
+    dy = (ymouse - y) ;
+    if(Math.abs(dx) + Math.abs(dy) < 0.1) {
+      x = xmouse;
+      y = ymouse;
+
+    } else {
+      x += dx;
+      y += dy;
+    }
+  }
+
+  div_toolt.style.left =  x  +5+ 'px';
+  div_toolt.style.top = $('body').scrollTop + y + 5+ 'px';
+};
 
 // Append a defs (for definition) element to your SVG
 const defs = svg.append('defs');
@@ -281,8 +312,8 @@ d3.json("static/js/Départementale.json", function(error, graph) {
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
       .style("opacity", function(d) {return d.alpha;})
       .sort(function(a, b) { return b.dy - a.dy; })
-      .on("mouseover", tip.show)
-      .on("mouseout", tip.hide);
+      .on("mouseover", handleMouseOver)
+      .on("mouseout", handleMouseOut);
 
   // add in the nodes
   var node = svg.append("g")
@@ -303,8 +334,8 @@ d3.json("static/js/Départementale.json", function(error, graph) {
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d){ return d.color; })
       .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
-      .on("mouseover", tip.show)
-      .on("mouseout",  tip.hide);
+      .on("mouseover", handleMouseOver)
+      .on("mouseout", handleMouseOut);
 
 
   // add in the title for the nodes
@@ -358,6 +389,25 @@ d3.json("static/js/Départementale.json", function(error, graph) {
     link.attr("d", sankey.link());
   }
 });
+
+function handleMouseOver(d, i) {
+
+    div_tooltip.transition()
+        .duration(800)
+        .style("opacity", .9);
+
+            div_tooltip.html(d.legend);
+
+
+}
+
+function handleMouseOut(d, i) {
+
+  div_tooltip.transition()
+         .duration(500)
+        .style("opacity","0");
+
+}
 // Update data on button
 function update_condition (){
 
