@@ -2,7 +2,7 @@
 
 If you would like to contribute to this project, we will maintain the website online. Therefore, we are open to new visualizations techniques or further data exploration.
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. 
+When contributing to this repository, please first discuss the change you wish to make via issue, email (mael.fabien@gmail.com), or any other method with the owners of this repository before making a change. 
 
 ## Pull Request Process
 
