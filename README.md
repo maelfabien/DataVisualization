@@ -6,6 +6,8 @@
 
 <img src="/Images/demo.gif" width="100%" height="100%">
 
+If you'd like to contribute, check the contribution page.
+
 ## I. Project description
 
 In this data visualization project, we are analyzing the road traffic accidents from the [French Database](https://www.data.gouv.fr/en/datasets/base-de-donnees-accidents-corporels-de-la-circulation/)
