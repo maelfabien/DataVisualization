@@ -24,7 +24,7 @@ We used the following technologies for this project :
 
 ![image](/Images/techno.png)
 
-We developped a WebApp accessible right here : https://infoviz.onrender.com/
+We developed a WebApp accessible right here : https://infoviz.onrender.com/
 
 ![image](/Images/webapp.png)
 
@@ -136,7 +136,7 @@ We decided to add interactivity at several levels :
 
 Indeed, we created three buttons (Communal, Departmental, State, Highway) so that the different users we are targeting can all filter the most relevant information quickly. We believe that this removes noise from other road types, and avoids to select filters manually.
 
-We decided not to implement the accident rate prediction in the final version since it would have required a dedicated page on the website which kills a bit the interactivity. However, as we developped this design, an idea came to our mind. Instead of letting the user explore the tooltip in green or red regions, and try by himself to understand the distribution of parameters, why not use the T-SNE plot as a **trackpad** in which the user can select regions, and we then display histograms of the values of parameters in this region.
+We decided not to implement the accident rate prediction in the final version since it would have required a dedicated page on the website which kills a bit the interactivity. However, as we developed this design, an idea came to our mind. Instead of letting the user explore the tooltip in green or red regions, and try by himself to understand the distribution of parameters, why not use the T-SNE plot as a **trackpad** in which the user can select regions, and we then display histograms of the values of parameters in this region.
 
 For example, here is the T-SNE embedding of all roads in France.
 
