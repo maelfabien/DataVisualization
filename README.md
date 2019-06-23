@@ -54,7 +54,7 @@ Our analysis could bring value to several road authorities in France :
 
 We except our end users to use our tool to :
 - **Sensitize** the youngsters and road criminals on the danger of the roads depending on the transportation mode they are using.
-- **Prevent** road dangers through a tool that would advise the best road characteristics for a road rehabilitation, and visually illustrate the outcome of the algorithm
+- **Prevent** road dangers through a tool that would allow the user to explore the accident rate based on the characteristics of the roads, and allow them to select the best road features during a road rehabilitation, or when building a new road for example
 - **Monitor** the dangers of the roads (at difference scales, including Communes, Departments and Nation) by allowing the user to select geographic zones and filters (weather conditions, hour of the day…) to gain additional insights
 
 For this reason, we subdivided our website into several tabs (Data exploration, All roads, Communal, Departmental, National, and highway roads) and in each tab, in several sections : Sensitize, Prevent and Monitor.
