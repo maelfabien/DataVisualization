@@ -107,8 +107,7 @@ Although we do believe that the design manages to display the right message, the
 ### 2. Prevention
 
 *Motivation* :
-
-Can communes, departments, or even the state prevent crashes before they occur? To answer this vast question, we created a graph whose role is to cluster the types of roads (width, surface, infrastructure, proximity of a school…), and their related accident rate, thanks to a T-SNE embedding. We reduce dimension to allow the user to visualize high dimensional problems in a simple dashboard. Thanks to this visualization, we expect road authorities to be able to adjust the characteristics of a road when building or renovating a road.
+Can communes, departments, or private companies prevent crashes before they occur? To answer this vast question, we created a graph whose role is to cluster the types of roads using the available features (width, surface, infrastructure, proximity of a school…), and their related accident rate, thanks to a T-SNE algorithm. We reduce dimension to allow the user to visualize high dimensional problems in a simple dashboard. Thanks to this visualization, we expect road authorities to be able to adjust the characteristics of a road when building or rehabilitating a road.
 
 The user can select the type of road from the different pages(communal, departmental, national), and in each case, observe the clusters created by T-SNEs. The green clusters represent a low accident rate, and the red ones a high one. The user can hover on a given point to observe all the characteristics of a given road, and select a region in the T-SNE plot. When selecting a region, the histograms all around the plot are updated. This allows users to understand the local distributions of variables on which they can have an impact when building a new road.
 
