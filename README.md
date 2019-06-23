@@ -16,7 +16,7 @@ There are 4 types of files :
 - `caracteristiques` which describes the caracteristics of the accidents (location, date ...)
 - `vehicules` which describes the vehicles damaged during the accident (for each vehicle individually)
 - `lieux` which describes the place in which the accident took place (type of road, width...)
-- `usagers` which describes the passengers or pedestrians that were hurt, the acitivity they were doing before the accident...
+- `usagers` which describes the passengers or pedestrians that were hurt, the activity they were doing before the accident...
 
 The are 9 attributes in the vehicles dataset (vehicle category, type of obstacle hurt...), 12 attributes for the passenger / user dataset (including age, sex, activity at the time of the accident...), 18 attributes for the location of the accident (road type, luminosity, road width...), and 16 attributes for the characteristics of the accident (date, time, GPS coordinates...). The 56 files represent 254 Mo overall.
 
