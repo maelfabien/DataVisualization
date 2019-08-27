@@ -4,7 +4,7 @@
 
 *Contributors : Anatoli de Bradké, Raphael Lederman, Alexandre Bec, Anthony Houdaille, Maël Fabien*
 
-The tool : https://infoviz.onrender.com/
+The tool (service suspended for the moment): https://infoviz.onrender.com/
 
 <img src="/Images/demo.gif" width="100%" height="100%">
 
